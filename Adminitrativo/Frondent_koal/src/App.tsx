@@ -12,7 +12,7 @@ import {
   HouseIcon,
   FolderCheckIcon,
   User2Icon,
-  LibraryBigIcon,
+  LibraryIcon, // Corregido
   PickaxeIcon,
   XIcon // Icono para cerrar en móvil
 } from 'lucide-react';
@@ -118,7 +118,7 @@ export function App() {
                 <span>Personal</span>
               </button>
               <button onClick={() => handleNavigationClick('reports')} className={`w-full text-left py-2 px-4 rounded flex items-center gap-2 ${activeView === 'reports' ? 'bg-gray-700' : 'hover:bg-gray-700'}`}>
-                <LibraryBigIcon size={20} />
+                <LibraryIcon size={20} />
                 <span>Informes</span>
               </button>
               <button onClick={() => handleNavigationClick('production')} className={`w-full text-left py-2 px-4 rounded flex items-center gap-2 ${activeView === 'production' ? 'bg-gray-700' : 'hover:bg-gray-700'}`}>
