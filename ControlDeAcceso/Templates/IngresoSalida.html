@@ -1,0 +1,61 @@
+{% load static %}
+
+{% block contenido %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %} Contro De Acceso y IngresoSalida {% endblock %}</title>
+    <!-- Enlace a Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Enlace de css -->
+     <link rel="stylesheet" href="{% static 'IngresoSalida.css' %}">
+</head>
+<body class="body">
+    <header class="header">
+        <div class="contenedor">
+            <h1 class="Nombre_de_la_empresa">Koal group</h1>
+            <img src="{% static 'Logokoalgroup.jpeg' %}" class="logo-empresa" width="200" heigth="200"></img>
+        </div>
+    </header>
+
+<div class="contenedor_grande">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="contenedor-loging">
+            <div class="contenedor-formulario" style="width: 20rem;">
+                <h2 class ="titulo-formulario">Koal group S.A.S</h2>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {{ form.as_p }} <!-- Esto renderiza el formulario-->
+                    
+                    <!-- Muestra el mensaje establecido-->
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li class="{{ message.tags }}">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <button type="submit" class="boton" id="boton">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Enlace a JavaScript de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <footer>
+        <p>© 2025 Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
+
+{% endblock %}
+
+
