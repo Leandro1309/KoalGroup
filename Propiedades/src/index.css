@@ -1,0 +1,8 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@media (max-width: 768px) {
+  .sidebar {
+    width: 0 !important;
+  }
+}
